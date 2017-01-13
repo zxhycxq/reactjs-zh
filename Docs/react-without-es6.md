@@ -1,8 +1,4 @@
----
-id: react-without-es6
-title: React Without ES6
-permalink: docs/react-without-es6.html
----
+一般情况下，你定义一个react组件作为js 类
 
 Normally you would define a React component as a plain JavaScript class:
 
@@ -13,6 +9,7 @@ class Greeting extends React.Component {
   }
 }
 ```
+如果不用es6 ，也可用`React.createClass` 替代
 
 If you don't use ES6 yet, you may use the `React.createClass` helper instead:
 
@@ -25,9 +22,13 @@ var Greeting = React.createClass({
 });
 ```
 
+ES6类的API类似于React.createClass，有一些例外
+
 The API of ES6 classes is similar to `React.createClass` with a few exceptions.
 
-## Declaring Prop Types and Default Props
+## 声明Prop类型和默认 Props
+
+作为组件自身的属性
 
 With functions and ES6 classes, `propTypes` and `defaultProps` are defined as properties on the components themselves:
 
@@ -44,6 +45,7 @@ Greeting.defaultProps = {
   name: 'Mary'
 };
 ```
+用`React.createClass()`，则需要定义
 
 With `React.createClass()`, you need to define `propTypes` as a property on the passed object, and `getDefaultProps()` as a function on it:
 
@@ -64,7 +66,10 @@ var Greeting = React.createClass({
 });
 ```
 
+## 设置初始状态
 ## Setting the Initial State
+
+在控制器中注册 this.state定义初始状态
 
 In ES6 classes, you can define the initial state by assigning `this.state` in the constructor:
 
@@ -78,6 +83,8 @@ class Counter extends React.Component {
 }
 ```
 
+使用`React.createClass()`，必须提供一个 getInitialState 方法返回初始状态
+
 With `React.createClass()`, you have to provide a separate `getInitialState` method that returns the initial state:
 
 ```javascript
@@ -90,15 +97,18 @@ var Counter = React.createClass({
 ```
 
 ## Autobinding
+##自动绑定
 
 In React components declared as ES6 classes, methods follow the same semantics as regular ES6 classes. This means that they don't automatically bind `this` to the instance. You'll have to explicitly use `.bind(this)` in the constructor:
+
+你必须在控制器明确地使用  .bind(this)
 
 ```javascript
 class SayHello extends React.Component {
   constructor(props) {
     super(props);
     this.state = {message: 'Hello!'};
-    // This line is important!
+    // 重要！！！
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -116,6 +126,8 @@ class SayHello extends React.Component {
   }
 }
 ```
+
+用`React.createClass()`, ，则不必了。
 
 With `React.createClass()`, this is not necessary because it binds all methods:
 
@@ -139,7 +151,11 @@ var SayHello = React.createClass({
 });
 ```
 
+这意味着编写ES6类有一些更多的样板代码用于事件处理程序，但是在大型应用程序中上行性能略好。
+
 This means writing ES6 classes comes with a little more boilerplate code for event handlers, but the upside is slightly better performance in large applications.
+
+如果样板代码太不吸引人，您可以使用Babel启用实验性类属性语法建议：
 
 If the boilerplate code is too unattractive to you, you may enable the **experimental** [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) syntax proposal with Babel:
 
@@ -165,6 +181,8 @@ class SayHello extends React.Component {
   }
 }
 ```
+
+实验性质的！！
 
 Please note that the syntax above is **experimental** and the syntax may change, or the proposal might not make it into the language.
 

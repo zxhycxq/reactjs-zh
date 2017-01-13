@@ -1,18 +1,4 @@
----
-id: dom-elements
-title: DOM Elements
-layout: docs
-category: Reference
-permalink: docs/dom-elements.html
-redirect_from:
-  - "docs/tags-and-attributes.html"
-  - "docs/dom-differences.html"
-  - "docs/special-non-dom-attributes.html"
-  - "docs/class-name-manipulation.html"
-  - "tips/inline-styles.html"
-  - "tips/style-props-value-px.html"
-  - "tips/dangerously-set-inner-html.html"
----
+
 
 React implements a browser-independent DOM system for performance and cross-browser compatibility. We took the opportunity to clean up a few rough edges in browser DOM implementations.
 
@@ -96,6 +82,7 @@ Normally, there is a warning when an element with children is also marked as `co
 
 The `value` attribute is supported by `<input>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
 
+## 支持所有的html属性
 ## All Supported HTML Attributes
 
 React supports all `data-*` and `aria-*` attributes as well as these attributes:
@@ -131,6 +118,7 @@ In addition, the following non-standard attributes are supported:
 - `unselectable` for Internet Explorer.
 - `results autoSave` for WebKit/Blink input fields of type `search`.
 
+## 支持所有的svg属性
 ## All Supported SVG Attributes
 
 React supports these SVG attributes:

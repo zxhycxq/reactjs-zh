@@ -1,10 +1,3 @@
----
-id: react-dom
-title: ReactDOM
-layout: docs
-category: Reference
-permalink: docs/react-dom.html
----
 
 If you use React as a script tag, these top-level APIs are available on the `ReactDOM` global. If you use ES6 with npm, you can write `import ReactDOM from 'react-dom'`. If you use ES5 with npm, you can write `var ReactDOM = require('react-dom')`.
 

@@ -18,7 +18,7 @@ redirect_from:
 
 ## Overview
 
-### Components
+### 组件
 
 React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing `React.Component` or `React.PureComponent`.
 

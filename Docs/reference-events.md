@@ -1,10 +1,3 @@
----
-id: events
-title: SyntheticEvent
-permalink: docs/events.html
-layout: docs
-category: Reference
----
 
 This reference guide documents the `SyntheticEvent` wrapper that forms part of React's Event System. See the [Handling Events](/react/docs/handling-events.html) guide to learn more.
 
@@ -65,6 +58,7 @@ function onClick(event) {
 > If you want to access the event properties in an asynchronous way, you should call `event.persist()` on the event, which will remove the synthetic event from the pool and allow references to the event to be retained by user code.
 
 ## Supported Events
+## 事件支持
 
 React normalizes events so that they have consistent properties across different browsers.
 
@@ -88,8 +82,10 @@ The event handlers below are triggered by an event in the bubbling phase. To reg
 * * *
 
 ## Reference
+## 参考
 
 ### Clipboard Events
+### 剪切板事件
 
 Event names:
 
@@ -122,7 +118,7 @@ string data
 
 * * *
 
-### Keyboard Events
+###键盘 Events
 
 Event names:
 
@@ -212,7 +208,7 @@ boolean shiftKey
 
 * * *
 
-### Selection Events
+### 选择 Events
 
 Event names:
 
@@ -222,7 +218,7 @@ onSelect
 
 * * *
 
-### Touch Events
+### 触摸 Events
 
 Event names:
 
@@ -337,4 +333,3 @@ string propertyName
 string pseudoElement
 float elapsedTime
 ```
-
