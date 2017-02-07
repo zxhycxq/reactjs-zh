@@ -43,7 +43,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/PGEjdG?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/PGEjdG?editors=0010)
 为了可读性，我们将jsx分割成了多行。
 然而这并不是强制性的，当这样做的时候，我们推荐在圆括号内包裹他，避免进入js的ASI机制陷阱（自动分号插入）。
 【译者注】[ASI介绍](http://justjavac.iteye.com/blog/1852405)

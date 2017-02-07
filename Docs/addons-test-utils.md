@@ -1,11 +1,4 @@
----
-id: test-utils
-title: Test Utilities
-permalink: docs/test-utils.html
-layout: docs
-category: Reference
-prev: perf.html
----
+
 
 **Importing**
 
@@ -16,6 +9,8 @@ var ReactTestUtils = React.addons.TestUtils; // ES5 with react-with-addons.js
 ```
 
 ## Overview
+
+`ReactTestUtils` 使得在你选择的测试框架中测试react组件变得容易。
 
 `ReactTestUtils` makes it easy to test React components in the testing framework of your choice. At Facebook we use [Jest](https://facebook.github.io/jest/) for painless JavaScript testing. Learn how to get started with Jest through the Jest website's [React Tutorial](http://facebook.github.io/jest/docs/tutorial-react.html#content).
 

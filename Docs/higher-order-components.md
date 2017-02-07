@@ -1,8 +1,4 @@
----
-id: higher-order-components
-title: Higher-Order Components
-permalink: docs/higher-order-components.html
----
+
 
 A higher-order component (HOC) is an advanced technique in React for reusing component logic. HOCs are not part of the React API, per se. They are a pattern that emerges from React's compositional nature.
 
@@ -375,6 +371,8 @@ function enhance(WrappedComponent) {
   return Enhance;
 }
 ```
+
+另一个可能的解决方案是将静态方法与组件本身分开导出。
 
 Another possible solution is to export the static method separately from the component itself.
 

@@ -80,6 +80,9 @@ function BlueDatePicker() {
 ```
 
 ### User-Defined Components Must Be Capitalized
+### 自定义 组件必须大写
+
+当组件以小写字母开头的时候，
 
 When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>` and results in a string `'div'` or `'span'` passed to `React.createElement`. Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)` and correspond to a component defined or imported in your JavaScript file.
 
@@ -160,15 +163,22 @@ function Story(props) {
 
 There are several different ways to specify props in JSX.
 
-### JavaScript Expressions
+### js表达式
+
+你可传递任何js表达式作为一个 prop, 用{}包裹。
 
 You can pass any JavaScript expression as a prop, by surrounding it with `{}`. For example, in this JSX:
 
 ```js
 <MyComponent foo={1 + 2 + 3 + 4} />
 ```
+`props.foo` 的值是10.
+
 
 For `MyComponent`, the value of `props.foo` will be `10` because the expression `1 + 2 + 3 + 4` gets evaluated.
+
+`if` 声明 和 `for` 循环不属于js表达式，故在jsx中无法直接使用，
+你可以把这些放在周围的代码中。 
 
 `if` statements and `for` loops are not expressions in JavaScript, so they can't be used in JSX directly. Instead, you can put these in the surrounding code. For example:
 
@@ -185,14 +195,19 @@ function NumberDescriber(props) {
 ```
 
 ### String Literals
+###  字符串字面量
 
-You can pass a string literal as a prop. These two JSX expressions are equivalent:
+可传递一个字符串字面量作为prop，下面两个例子相等。
+
+You can pass a string literal as a prop. 
+These two JSX expressions are equivalent:
 
 ```js
 <MyComponent message="hello world" />
 
 <MyComponent message={'hello world'} />
 ```
+当你传递字符串字面量的时候，其值是未转义的html，下面两个相等。
 
 When you pass a string literal, its value is HTML-unescaped. So these two JSX expressions are equivalent:
 
@@ -201,10 +216,14 @@ When you pass a string literal, its value is HTML-unescaped. So these two JSX ex
 
 <MyComponent message={'<3'} />
 ```
+此行为通常不相关。 这里只提到完整性。
 
 This behavior is usually not relevant. It's only mentioned here for completeness.
 
 ### Props Default to "True"
+### Props 默认 to "True"
+
+如果未给prop设值，默认为true，下面两个相等
 
 If you pass no value for a prop, it defaults to `true`. These two JSX expressions are equivalent:
 
@@ -213,10 +232,12 @@ If you pass no value for a prop, it defaults to `true`. These two JSX expression
 
 <MyTextBox autocomplete={true} />
 ```
+通常来说，不建议这样使用，因为
 
 In general, we don't recommend using this because it can be confused with the [ES6 object shorthand](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015) `{foo}` which is short for `{foo: foo}` rather than `{foo: true}`. This behavior is just there so that it matches the behavior of HTML.
 
 ### Spread Attributes
+### 属性扩散
 
 If you already have `props` as an object, and you want to pass it in JSX, you can use `...` as a "spread" operator to pass the whole props object. These two components are equivalent:
 
@@ -232,6 +253,8 @@ function App2() {
 ```
 
 Spread attributes can be useful when you are building generic containers. However, they can also make your code messy by making it easy to pass a lot of irrelevant props to components that don't care about them. We recommend that you use this syntax sparingly.
+
+我们建议谨慎使用此方法。
 
 ## Children in JSX
 
@@ -297,6 +320,10 @@ You can mix together different types of children, so you can use string literals
 A React component can't return multiple React elements, but a single JSX expression can have multiple children, so if you want a component to render multiple things you can wrap it in a `div` like this.
 
 ### JavaScript Expressions
+### js 表达式
+
+你可以传递任何js表达式作为子元素，通过闭合的{}方式。
+下面的对等。
 
 You can pass any JavaScript expression as children, by enclosing it within `{}`. For example, these expressions are equivalent:
 
@@ -305,6 +332,8 @@ You can pass any JavaScript expression as children, by enclosing it within `{}`.
 
 <MyComponent>{'foo'}</MyComponent>
 ```
+
+渲染任意长度的jsx列表的时候有用
 
 This is often useful for rendering a list of JSX expressions of arbitrary length. For example, this renders an HTML list:
 

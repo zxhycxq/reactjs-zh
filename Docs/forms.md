@@ -1,13 +1,4 @@
----
-id: forms
-title: Forms
-permalink: docs/forms.html
-prev: state-and-lifecycle.html
-next: lifting-state-up.html
-redirect_from:
-  - "tips/controlled-input-null-value.html"
-  - "docs/forms-zh-CN.html"
----
+
 
 HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
 
@@ -64,7 +55,7 @@ class NameForm extends React.Component {
 }
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
 Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
 
@@ -77,6 +68,7 @@ handleChange(event) {
 ```
 
 ## The textarea Tag
+## extarea 标签
 
 In HTML, a `<textarea>` element defines its text by its children:
 
@@ -126,6 +118,8 @@ class EssayForm extends React.Component {
 Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
 
 ## The select Tag
+
+下拉菜单
 
 In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
 
@@ -178,7 +172,7 @@ class FlavorForm extends React.Component {
 }
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
 Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
 

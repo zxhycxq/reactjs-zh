@@ -1,16 +1,4 @@
----
-id: installation
-title: Installation
-permalink: docs/installation.html
-redirect_from:
-  - "download.html"
-  - "downloads.html"
-  - "docs/tooling-integration.html"
-  - "docs/package-management.html"
-  - "docs/language-tooling.html"
-  - "docs/environments.html"
-next: hello-world.html
----
+
 
 React is flexible and can be used in a variety of projects. You can create new apps with it, but you can also gradually introduce it into an existing codebase without doing a rewrite.
 
@@ -46,6 +34,7 @@ While React [can be used](/react/docs/react-without-es6.html) without a build pi
 * A **compiler** such as [Babel](http://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
 
 ### Installing React
+###  React 安装
 
 We recommend using [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/) for managing front-end dependencies. If you're new to package managers, the [Yarn documentation](https://yarnpkg.com/en/docs/getting-started) is a good place to get started.
 

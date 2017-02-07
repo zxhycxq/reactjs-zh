@@ -1,14 +1,12 @@
----
-id: react-dom
-title: ReactDOM
-layout: docs
-category: Reference
-permalink: docs/react-dom.html
----
+顶级API
 
 If you use React as a script tag, these top-level APIs are available on the `ReactDOM` global. If you use ES6 with npm, you can write `import ReactDOM from 'react-dom'`. If you use ES5 with npm, you can write `var ReactDOM = require('react-dom')`.
 
 ## Overview
+## 综述
+
+`react-dom` 包提供了特殊DOM方法，可以被用在你的app当中。
+你的大多数组件都需要这些模块。
 
 The `react-dom` package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the React model if you need to. Most of your components should not need to use this module.
 
@@ -17,16 +15,20 @@ The `react-dom` package provides DOM-specific methods that can be used at the to
 - [`findDOMNode()`](#finddomnode)
 
 ### Browser Support
+### 浏览器支持
 
 React supports all popular browsers, including Internet Explorer 9 and above.
 
 > Note
 >
+>我们不支持那些不支持es5 方法的浏览器。
+
 > We don't support older browsers that don't support ES5 methods, but you may find that your apps do work in older browsers if polyfills such as [es5-shim and es5-sham](https://github.com/es-shims/es5-shim) are included in the page. You're on your own if you choose to take this path.
 
 * * *
 
 ## Reference
+## 参考
 
 ### `render()`
 
@@ -40,7 +42,11 @@ ReactDOM.render(
 
 Render a React element into the DOM in the supplied `container` and return a [reference](/react/docs/more-about-refs.html) to the component (or returns `null` for [stateless components](/react/docs/components-and-props.html#functional-and-class-components)).
 
+如果 React 元素已经在container中渲染过了，他将更新，仅改变必要的DOM影响最新的react元素。
+
 If the React element was previously rendered into `container`, this will perform an update on it and only mutate the DOM as necessary to reflect the latest React element.
+
+如果回调函数已经提供了，他将在组件被渲染或更新后被执行。
 
 If the optional callback is provided, it will be executed after the component is rendered or updated.
 
@@ -61,6 +67,8 @@ If the optional callback is provided, it will be executed after the component is
 ```javascript
 ReactDOM.unmountComponentAtNode(container)
 ```
+从dom上移除一个已安装的react组件并且清理他的事件处理和状态。如果container上面没有注册组件，调用这个函数，但什么也不做。
+如果组件是卸载的然会true，无组件可卸载返回false。
 
 Remove a mounted React component from the DOM and clean up its event handlers and state. If no component was mounted in the container, calling this function does nothing. Returns `true` if a component was unmounted and `false` if there was no component to unmount.
 
@@ -71,6 +79,8 @@ Remove a mounted React component from the DOM and clean up its event handlers an
 ```javascript
 ReactDOM.findDOMNode(component)
 ```
+如果这个组件在dom中已经装载，他返回相应的浏览器原生dom元素。这个方法用于读值 （来自dom）
+
 If this component has been mounted into the DOM, this returns the corresponding native browser DOM element. This method is useful for reading values out of the DOM, such as form field values and performing DOM measurements. **In most cases, you can attach a ref to the DOM node and avoid using `findDOMNode` at all.** When `render` returns `null` or `false`, `findDOMNode` returns `null`.
 
 > Note:
@@ -79,4 +89,6 @@ If this component has been mounted into the DOM, this returns the corresponding 
 >
 > `findDOMNode` only works on mounted components (that is, components that have been placed in the DOM). If you try to call this on a component that has not been mounted yet (like calling `findDOMNode()` in `render()` on a component that has yet to be created) an exception will be thrown.
 >
+> `findDOMNode` 不可悲用在函数性组件上
+
 > `findDOMNode` cannot be used on functional components.

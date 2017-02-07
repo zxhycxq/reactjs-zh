@@ -1,6 +1,8 @@
 
 First, let's review how you transform lists in JavaScript.
 
+`map()` 方法 数组转换
+
 Given the code below, we use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function to take an array of `numbers` and double their values. We assign the new array returned by `map()` to the variable `doubled` and log it:
 
 ```javascript{2}
@@ -11,11 +13,16 @@ console.log(doubled);       //[2, 4, 6, 8, 10]
 
 This code logs `[2, 4, 6, 8, 10]` to the console.
 
+在React中，将数组转换为元素列表几乎是一样的。
+
 In React, transforming arrays into lists of [elements](/react/docs/rendering-elements.html) is nearly identical.
 
 ### Rendering Multiple Components
+### 渲染多个组件
 
 You can build collections of elements and [include them in JSX](/react/docs/introducing-jsx.html#embedding-expressions-in-jsx) using curly braces `{}`.
+
+如下，我们用js `map()`函数循环了numbers数组。
 
 Below, we loop through the `numbers` array using the Javascript [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function. We return an `<li>` element for each item. Finally, we assign the resulting array of elements to `listItems`:
 
@@ -26,6 +33,8 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+我们在 `<ul>` 元素中包含了整个 `listItems` ，渲染到DOM上面。
+
 We include the entire `listItems` array inside a `<ul>` element, and [render it to the DOM](/react/docs/rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
@@ -35,13 +44,18 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
+
+显示1-5
 
 This code displays a bullet list of numbers between 1 and 5.
 
 ### Basic List Component
+### 基础列表组件
 
 Usually you would render lists inside a [component](/react/docs/components-and-props.html).
+
+改造为组件
 
 We can refactor the previous example into a component that accepts an array of `numbers` and outputs an unordered list of elements.
 
@@ -62,8 +76,11 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+运行 的时候会有警告，key 应该提供。
 
 When you run this code, you'll be given a warning that a key should be provided for list items. A "key" is a special string attribute you need to include when creating lists of elements. We'll discuss why it's important in the next section.
+
+在创建列表元素的时候，key 是特殊的string属性，下一部分细讲
 
 Let's assign a `key` to our list items inside `numbers.map()` and fix the missing key issue.
 
@@ -87,9 +104,12 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
 
 ## Keys
+
+keys 帮助react识别那个列表变化了，增加还是删除。
+
 
 Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:
 
@@ -116,16 +136,19 @@ When you don't have stable IDs for rendered items, you may use the item index as
 
 ```js{2,3}
 const todoItems = todos.map((todo, index) =>
-  // Only do this if items have no stable IDs
+  // 仅适用于如果条目没有静态IDs          
+  //Only do this if items have no stable IDs
   <li key={index}>
     {todo.text}
   </li>
 );
 ```
+//不推荐用indexes 
 
 We don't recommend using indexes for keys if the items can reorder, as that would be slow. You may read an [in-depth explanation about why keys are necessary](/react/docs/reconciliation.html#recursing-on-children) if you're interested.
 
 ### Extracting Components with Keys
+### 使用 Keys提取组件
 
 Keys only make sense in the context of the surrounding array.
 
@@ -193,7 +216,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/rthor/pen/QKzJKG?editors=0010)
+[在CodePen上试验.](https://codepen.io/rthor/pen/QKzJKG?editors=0010)
 
 A good rule of thumb is that elements inside the `map()` call need keys.
 
@@ -237,7 +260,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
 
 Keys serve as a hint to React but they don't get passed to your components. If you need the same value in your component, pass it explicitly as a prop with a different name:
 
@@ -287,6 +310,6 @@ function NumberList(props) {
 }
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/BLvYrB?editors=0010)
 
 Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the `map()` body is too nested, it might be a good time to [extract a component](/react/docs/components-and-props.html#extracting-components).

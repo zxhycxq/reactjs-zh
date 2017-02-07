@@ -1,8 +1,6 @@
----
-id: reconciliation
-title: Reconciliation
-permalink: docs/reconciliation.html
----
+
+
+React 提供了声明式API。
 
 React provides a declarative API so that you don't have to worry about exactly what changes on every update. This makes writing applications a lot easier, but it might not be obvious how this is implemented within React. This article explains the choices we made in React's "diffing" algorithm so that component updates are predictable while being fast enough for high-performance apps.
 
@@ -44,6 +42,7 @@ Any components below the root will also get unmounted and have their state destr
 This will destroy the old `Counter` and remount a new one.
 
 ### DOM Elements Of The Same Type
+### 同种类型的DOM元素
 
 When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. For example:
 
@@ -55,6 +54,8 @@ When comparing two React DOM elements of the same type, React looks at the attri
 
 By comparing these two elements, React knows to only modify the `className` on the underlying DOM node.
 
+当更新样式的时候，react知道只修改底层DOM节点上的className
+
 When updating `style`, React also knows to update only the properties that changed. For example:
 
 ```xml
@@ -62,6 +63,8 @@ When updating `style`, React also knows to update only the properties that chang
 
 <div style={{'{{'}}color: 'green', fontWeight: 'bold'}} />
 ```
+
+
 
 When converting between these two elements, React knows to only modify the `color` style, not the `fontWeight`.
 
@@ -113,6 +116,8 @@ React will mutate every child instead of realizing it can keep the `<li>Duke</li
 
 ### Keys
 
+为解决这个issue, React 支持 `key` 属性. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a `key` to our inefficient example above can make the tree conversion efficient:
+
 In order to solve this issue, React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a `key` to our inefficient example above can make the tree conversion efficient:
 
 ```xml
@@ -128,7 +133,11 @@ In order to solve this issue, React supports a `key` attribute. When children ha
 </ul>
 ```
 
+现在 React 知道 带有‘2014’key的元素是新的，带有‘2015’和‘2016’key的元素移动了，
+
 Now React knows that the element with key `'2014'` is the new one, and the elements with the keys `'2015'` and `'2016'` have just moved.
+
+实际而言，找一个key并不困难，你要显示的元素或许已经有一个唯一的ID，故，key来自你的数据：
 
 In practice, finding a key is usually not hard. The element you are going to display may already have a unique ID, so the key can just come from your data:
 
@@ -150,4 +159,4 @@ Because React relies on heuristics, if the assumptions behind them are not met, 
 
 1. The algorithm will not try to match subtrees of different component types. If you see yourself alternating between two component types with very similar output, you may want to make it the same type. In practice, we haven't found this to be an issue.
 
-2. Keys should be stable, predictable, and unique. Unstable keys (like those produced by `Math.random()`) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
+2. Keys 应该是 stable, predictable, and unique. Unstable keys (like those produced by `Math.random()`) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.

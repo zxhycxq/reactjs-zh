@@ -1,10 +1,4 @@
----
-id: shallow-compare
-title: Shallow Compare
-permalink: docs/shallow-compare.html
-layout: docs
-category: Reference
----
+
 
 > Note:
 > `shallowCompare` is a legacy add-on. Use [`React.PureComponent`](/react/docs/react-api.html#react.purecomponent) instead.
