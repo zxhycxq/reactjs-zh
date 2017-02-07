@@ -1,8 +1,4 @@
----
-id: context
-title: Context
-permalink: docs/context.html
----
+
 
 With React, it's easy to track the flow of data through your React components. When you look at a component, you can see which props are being passed, which makes your apps easy to reason about.
 
@@ -10,6 +6,7 @@ In some cases, you want to pass data through the component tree without having t
 You can do this directly in React with the powerful "context" API.
 
 ## Why Not To Use Context
+## 为什么使用Context
 
 The vast majority of applications do not need to use context.
 
@@ -158,8 +155,11 @@ Button.contextTypes = {color: React.PropTypes.string};
 ```
 
 ## Updating Context
+## 更新 Context
 
 Don't do it.
+
+不要这样做
 
 React has an API to update context, but it is fundamentally broken and you should not use it.
 

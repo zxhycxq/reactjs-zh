@@ -1,12 +1,4 @@
----
-id: perf
-title: Performance Tools
-permalink: docs/perf.html
-layout: docs
-category: Add-Ons
-prev: create-fragment.html
-next: test-utils.html
----
+
 
 **Importing**
 

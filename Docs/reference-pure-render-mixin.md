@@ -1,10 +1,4 @@
----
-id: pure-render-mixin
-title: PureRenderMixin
-layout: docs
-category: Reference
-permalink: docs/pure-render-mixin.html
----
+
 
 > Note
 

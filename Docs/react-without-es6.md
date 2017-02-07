@@ -1,4 +1,4 @@
-一般情况下，你定义一个react组件作为js 类
+一般情况下，你应该定义一个react组件作为js 类
 
 Normally you would define a React component as a plain JavaScript class:
 
@@ -45,7 +45,7 @@ Greeting.defaultProps = {
   name: 'Mary'
 };
 ```
-用`React.createClass()`，则需要定义
+用`React.createClass()`，则需要定义propTypes作为传递对象的属性，以及getDefaultProps()作为函数。
 
 With `React.createClass()`, you need to define `propTypes` as a property on the passed object, and `getDefaultProps()` as a function on it:
 
@@ -69,7 +69,7 @@ var Greeting = React.createClass({
 ## 设置初始状态
 ## Setting the Initial State
 
-在控制器中注册 this.state定义初始状态
+在es6 class，可在控制器中注册 this.state定义初始状态
 
 In ES6 classes, you can define the initial state by assigning `this.state` in the constructor:
 

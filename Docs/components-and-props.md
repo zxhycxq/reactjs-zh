@@ -73,7 +73,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/YGYmEG?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/YGYmEG?editors=0010)
 
 简要叙述下例子中发生了什么
 
@@ -126,7 +126,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/KgQKPr?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/KgQKPr?editors=0010)
 
 通常，新的React应用程序在顶部有一个单独的App组件。 但是，如果您将React集成到现有应用程序中，则可以使用Button这样的小组件自下而上开始逐步向上到达视图层次结构的顶部。
 
@@ -169,7 +169,7 @@ function Comment(props) {
 }
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/VKQwEo?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/VKQwEo?editors=0010)
 
 It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
 
@@ -256,7 +256,7 @@ function Comment(props) {
 }
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/rrJNJY?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/rrJNJY?editors=0010)
 
 提取组件起初可能看起来像枯燥乏味的工作，
 但是有一个可重用组件的调色板在较大的应用程序中支付。

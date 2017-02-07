@@ -1,12 +1,4 @@
----
-id: two-way-binding-helpers
-title: Two-way Binding Helpers
-permalink: docs/two-way-binding-helpers.html
-layout: docs
-category: Add-Ons
-prev: pure-render-mixin.html
-next: update.html
----
+
 
 > Note:
 > `LinkedStateMixin` is deprecated as of React v15. The recommendation is to explicitly set the value and change handler, instead of using `LinkedStateMixin`.

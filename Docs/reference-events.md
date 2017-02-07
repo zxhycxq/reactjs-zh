@@ -75,7 +75,7 @@ The event handlers below are triggered by an event in the bubbling phase. To reg
 - [UI Events](#ui-events)
 - [Wheel Events](#wheel-events)
 - [Media Events](#media-events)
-- [Image Events](#image-events)
+- [图片 Events](#image-events)
 - [Animation Events](#animation-events)
 - [Transition Events](#transition-events)
 
@@ -87,13 +87,13 @@ The event handlers below are triggered by an event in the bubbling phase. To reg
 ### Clipboard Events
 ### 剪切板事件
 
-Event names:
+事件名称:
 
 ```
 onCopy onCut onPaste
 ```
 
-Properties:
+属性:
 
 ```javascript
 DOMDataTransfer clipboardData
@@ -103,13 +103,13 @@ DOMDataTransfer clipboardData
 
 ### Composition Events
 
-Event names:
+事件名称:
 
 ```
 onCompositionEnd onCompositionStart onCompositionUpdate
 ```
 
-Properties:
+属性:
 
 ```javascript
 string data
@@ -120,13 +120,13 @@ string data
 
 ###键盘 Events
 
-Event names:
+事件名称:
 
 ```
 onKeyDown onKeyPress onKeyUp
 ```
 
-Properties:
+属性:
 
 ```javascript
 boolean altKey
@@ -147,7 +147,7 @@ number which
 
 ### Focus Events
 
-Event names:
+事件名称:
 
 ```
 onFocus onBlur
@@ -155,7 +155,7 @@ onFocus onBlur
 
 These focus events work on all elements in the React DOM, not just form elements.
 
-Properties:
+属性:
 
 ```javascript
 DOMEventTarget relatedTarget
@@ -165,7 +165,7 @@ DOMEventTarget relatedTarget
 
 ### Form Events
 
-Event names:
+事件名称:
 
 ```
 onChange onInput onSubmit
@@ -177,7 +177,7 @@ For more information about the onChange event, see [Forms](/react/docs/forms.htm
 
 ### Mouse Events
 
-Event names:
+事件名称:
 
 ```
 onClick onContextMenu onDoubleClick onDrag onDragEnd onDragEnter onDragExit
@@ -187,7 +187,7 @@ onMouseMove onMouseOut onMouseOver onMouseUp
 
 The `onMouseEnter` and `onMouseLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
 
-Properties:
+属性:
 
 ```javascript
 boolean altKey
@@ -210,7 +210,7 @@ boolean shiftKey
 
 ### 选择 Events
 
-Event names:
+事件名称:
 
 ```
 onSelect
@@ -220,13 +220,13 @@ onSelect
 
 ### 触摸 Events
 
-Event names:
+事件名称:
 
 ```
 onTouchCancel onTouchEnd onTouchMove onTouchStart
 ```
 
-Properties:
+属性:
 
 ```javascript
 boolean altKey
@@ -243,13 +243,13 @@ DOMTouchList touches
 
 ### UI Events
 
-Event names:
+事件名称:
 
 ```
 onScroll
 ```
 
-Properties:
+属性:
 
 ```javascript
 number detail
@@ -260,13 +260,13 @@ DOMAbstractView view
 
 ### Wheel Events
 
-Event names:
+事件名称:
 
 ```
 onWheel
 ```
 
-Properties:
+属性:
 
 ```javascript
 number deltaMode
@@ -279,7 +279,7 @@ number deltaZ
 
 ### Media Events
 
-Event names:
+事件名称:
 
 ```
 onAbort onCanPlay onCanPlayThrough onDurationChange onEmptied onEncrypted 
@@ -290,9 +290,9 @@ onTimeUpdate onVolumeChange onWaiting
 
 * * *
 
-### Image Events
+### 图片 Events
 
-Event names:
+事件名称:
 
 ```
 onLoad onError
@@ -302,13 +302,13 @@ onLoad onError
 
 ### Animation Events
 
-Event names:
+事件名称:
 
 ```
 onAnimationStart onAnimationEnd onAnimationIteration
 ```
 
-Properties:
+属性:
 
 ```javascript
 string animationName
@@ -320,13 +320,13 @@ float elapsedTime
 
 ### Transition Events
 
-Event names:
+事件名称:
 
 ```
 onTransitionEnd
 ```
 
-Properties:
+属性:
 
 ```javascript
 string propertyName

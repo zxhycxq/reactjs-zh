@@ -25,7 +25,7 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/gwoJZk?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
 在本节中，我们将学习如何使Clock组件真正可重用和封装。它将设置自己的计时器并每秒更新一次。
 
@@ -57,7 +57,7 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/dpdoYR?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
 然而，它错过了一个关键的要求：
 设置一个定时器的时钟和每秒更新UI的事实应该是时钟的实现细节。
@@ -127,7 +127,7 @@ class Clock extends React.Component {
 }
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/zKRGpo?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/zKRGpo?editors=0010)
 
 `Clock`  现在被定义为一个类而不是函数。
 
@@ -228,7 +228,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/KgQpJd?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/KgQpJd?editors=0010)
 
 Next, we'll make the `Clock` set up its own timer and update itself every second.
 
@@ -359,7 +359,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/amqdNA?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/amqdNA?editors=0010)
 
 Now the clock ticks every second.
 
@@ -500,7 +500,7 @@ function FormattedDate(props) {
 }
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/zKRqNB?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/zKRqNB?editors=0010)
 
 This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.
 
@@ -525,7 +525,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/vXdGmd?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/vXdGmd?editors=0010)
 
 Each `Clock` sets up its own timer and updates independently.
 

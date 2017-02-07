@@ -1,35 +1,30 @@
----
-id: react-api
-title: React Top-Level API
-layout: docs
-category: Reference
-permalink: docs/react-api.html
-redirect_from:
-  - "docs/reference.html"
-  - "docs/clone-with-props.html"
-  - "docs/top-level-api.html"
-  - "docs/top-level-api-ja-JP.html"
-  - "docs/top-level-api-ko-KR.html"
-  - "docs/top-level-api-zh-CN.html"
-  - "docs/glossary.html"
----
 
 `React` is the entry point to the React library. If you use React as a script tag, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
+
+ES6    `import React from 'react'`
+
+ES5    `var React = require('react')`
+
 
 ## Overview
 
 ### 组件
+
+React 组件可使分割UI独立组件、可重用组件。
 
 React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing `React.Component` or `React.PureComponent`.
 
  - [`React.Component`](#react.component)
  - [`React.PureComponent`](#react.purecomponent)
 
+若不用es6 标签，可用下面的替代。
+
 If you don't use ES6 classes, you may use this helper instead.
 
  - [`createClass()`](#createclass)
 
 ### Creating React Elements
+### 创建 React 元素
 
 We recommend [using JSX](/react/docs/introducing-jsx.html) to describe what your UI should look like. Each JSX element is just syntactic sugar for calling [`React.createElement()`](#createelement). You will not typically invoke the following methods directly if you are using JSX.
 

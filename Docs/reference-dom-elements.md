@@ -5,6 +5,7 @@ React implements a browser-independent DOM system for performance and cross-brow
 In React, all DOM properties and attributes (including event handlers) should be camelCased. For example, the HTML attribute `tabindex` corresponds to the attribute `tabIndex` in React. The exception is `aria-*` and `data-*` attributes, which should be lowercased.
 
 ## Differences In Attributes
+## 属性方面的不同
 
 There are a number of attributes that work differently between React and HTML:
 

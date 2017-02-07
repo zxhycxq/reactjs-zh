@@ -50,7 +50,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/rrpgNB?editors=1010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/rrpgNB?editors=1010)
 
 
 It displays "Hello, world" on the page.
@@ -87,7 +87,7 @@ function tick() {
 setInterval(tick, 1000);
 ```
 
-[Try it on CodePen.](http://codepen.io/gaearon/pen/gwoJZk?editors=0010)
+[在CodePen上试验.](http://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
 从回调函数中每隔一秒调用 `ReactDOM.render()` 
 

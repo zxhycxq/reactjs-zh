@@ -34,11 +34,12 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
 This example renders a different greeting depending on the value of `isLoggedIn` prop.
 
 ### Element Variables
+### 元素变量
 
 You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
 
@@ -108,7 +109,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
 While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
 
@@ -138,7 +139,7 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
 It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
 
@@ -230,6 +231,6 @@ ReactDOM.render(
 );
 ```
 
-[Try it on CodePen.](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
+[在CodePen上试验.](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
 Returning `null` from a component's `render` method does not affect the firing of the component's lifecycle methods. For instance, `componentWillUpdate` and `componentDidUpdate` will still be called.
