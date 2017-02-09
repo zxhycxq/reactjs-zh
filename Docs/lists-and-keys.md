@@ -152,7 +152,7 @@ We don't recommend using indexes for keys if the items can reorder, as that woul
 
 Keys only make sense in the context of the surrounding array.
 
-For example, if you [extract](/react/docs/components-and-props.html#extracting-components) a `ListItem` component, you should keep the key on the `<ListItem />` elements in the array rather than on the root `<li>` element in the `ListItem` itself.
+例如：, if you [extract](/react/docs/components-and-props.html#extracting-components) a `ListItem` component, you should keep the key on the `<ListItem />` elements in the array rather than on the root `<li>` element in the `ListItem` itself.
 
 **Example: Incorrect Key Usage**
 

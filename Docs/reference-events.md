@@ -62,7 +62,7 @@ function onClick(event) {
 
 React normalizes events so that they have consistent properties across different browsers.
 
-The event handlers below are triggered by an event in the bubbling phase. To register an event handler for the capture phase, append `Capture` to the event name; for example, instead of using `onClick`, you would use `onClickCapture` to handle the click event in the capture phase.
+The event handlers below are triggered by an event in the bubbling phase. To register an event handler for the capture phase, append `Capture` to the event name; 例如：, instead of using `onClick`, you would use `onClickCapture` to handle the click event in the capture phase.
 
 - [Clipboard Events](#clipboard-events)
 - [Composition Events](#composition-events)

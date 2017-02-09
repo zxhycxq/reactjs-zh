@@ -11,7 +11,7 @@ Handling events with React elements is very similar to handling events on DOM el
 
 例如，在html中
 
-For example, the HTML:
+例如：, the HTML:
 
 ```html
 <button onclick="activateLasers()">
@@ -31,7 +31,7 @@ is slightly different in React:
 你必须调明确地用preventDefault。
 例如：使用纯HTML，为了防止打开新页面的默认链接行为，您可以这样写：
 
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
+Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. 例如：, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
 
 ```html
 <a href="#" onclick="console.log('The link was clicked.'); return false">
@@ -71,7 +71,7 @@ When using React you should generally not need to call `addEventListener` to add
 当您使用ES6类定义组件时，常见的模式是将事件处理程序作为class上的方法。
 例如，此Toggle组件呈现一个按钮，让用户在“ON”和“OFF”状态之间切换：
 
-When you define a component using an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), a common pattern is for an event handler to be a method on the class. For example, this `Toggle` component renders a button that lets the user toggle between "ON" and "OFF" states:
+When you define a component using an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), a common pattern is for an event handler to be a method on the class. 例如：, this `Toggle` component renders a button that lets the user toggle between "ON" and "OFF" states:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {

@@ -59,7 +59,7 @@ const element = <Welcome name="Sara" />;
 
 When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
 
-For example, this code renders "Hello, Sara" on the page:
+例如：, this code renders "Hello, Sara" on the page:
 
 ```js{1,5}
 function Welcome(props) {
@@ -90,7 +90,7 @@ Let's recap what happens in this example:
 
 >Always start component names with a capital letter.
 >
->For example, `<div />` represents a DOM tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>例如：, `<div />` represents a DOM tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
 
 >例如，`<div />`表示一个DOM标签，但 ` <Welcome />`表示一个组件，并要求 Welcome 在范围内。
 
@@ -103,7 +103,7 @@ Let's recap what happens in this example:
 
 Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
 
-For example, we can create an `App` component that renders `Welcome` many times:
+例如：, we can create an `App` component that renders `Welcome` many times:
 
 ```js{8-10}
 function Welcome(props) {
@@ -143,7 +143,7 @@ Typically, new React apps have a single `App` component at the very top. However
 
 Don't be afraid to split components into smaller components.
 
-For example, consider this `Comment` component:
+例如：, consider this `Comment` component:
 
 ```js
 function Comment(props) {

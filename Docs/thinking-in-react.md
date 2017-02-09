@@ -147,7 +147,7 @@ To make your UI interactive, you need to be able to trigger changes to your unde
 比如，你构建一个TODO列表，只需要关注TODO的items数组，不要关注数组长度的变化；
 相反的，当你想统计TODO时就只需要关注items数组长度即可。
 
-To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. The key here is DRY: *Don't Repeat Yourself*. Figure out the absolute minimal representation of the state your application needs and compute everything else you need on-demand. For example, if you're building a TODO list, just keep an array of the TODO items around; don't keep a separate state variable for the count. Instead, when you want to render the TODO count, simply take the length of the TODO items array.
+To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. The key here is DRY: *Don't Repeat Yourself*. Figure out the absolute minimal representation of the state your application needs and compute everything else you need on-demand. 例如：, if you're building a TODO list, just keep an array of the TODO items around; don't keep a separate state variable for the count. Instead, when you want to render the TODO count, simply take the length of the TODO items array.
 
 思考我们的例子中的数据组成：
     

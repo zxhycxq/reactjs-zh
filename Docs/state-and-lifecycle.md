@@ -31,8 +31,6 @@ setInterval(tick, 1000);
 
 我们可以从封装时钟的外观开始：
 
-
-
 In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
 
 We can start by encapsulating how the clock looks:
@@ -79,7 +77,7 @@ To implement this, we need to add "state" to the `Clock` component.
 
 要实现这一点，我们需要添加“状态”到时钟组件。
 
-状态类似于道具，但它是私有的，完全由组件控制。
+状态类似于 props，但它是私有的，完全由组件控制。
 
 我们之前提到，定义为类的组件有一些额外的特性。 本地状态就是：一个只有类可用的功能。
 
@@ -100,7 +98,7 @@ You can convert a functional component like `Clock` to a class in five steps:
 
 将函数的主体移动到render（）方法中。
 
-在render（）主体中用this.props替换道具。
+在render（）主体中用this.props替换props。
 
 删除剩余的空函数声明。
 
@@ -141,6 +139,8 @@ This lets us use additional features such as local state and lifecycle hooks.
 ## 为类增加局部状态
 ## Adding Local State to a Class
 
+三步走，从props中移动`数据`到state
+
 We will move the `date` from props to state in three steps:
 
 1) Replace `this.props.date` with `this.state.date` in the `render()` method:
@@ -160,6 +160,8 @@ class Clock extends React.Component {
 ```
 
 2) Add a [class constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) that assigns the initial `this.state`:
+
+2)增加一个 [class constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) that assigns the initial `this.state`:
 
 ```js{4}
 class Clock extends React.Component {
@@ -190,9 +192,11 @@ Note how we pass `props` to the base constructor:
 
 Class components should always call the base constructor with `props`.
 
+组件类应该总是使用 props 调用基础构造函数。
+
 3) Remove the `date` prop from the `<Clock />` element:
 
-3) 移除 `date` prop from the `<Clock />` element:
+3) 从`<Clock />` 元素移除 `date` prop :
 
 ```js{2}
 ReactDOM.render(
@@ -246,7 +250,7 @@ We can declare special methods on the component class to run some code when a co
 
 在具有许多组件的应用程序中，释放组件在销毁时占用的资源非常重要。
 
-我们想要在第一次将时钟渲染到DOM时设置一个计时器。 这在React中称为“安装”。
+我们想要在第一次将时钟渲染到DOM时设置一个计时器。 这在React中称为“装载”。
 
 我们还想清除定时器，当时钟产生的DOM被删除。 这在React中称为“卸载”。
 
@@ -278,11 +282,11 @@ class Clock extends React.Component {
 }
 ```
 
-生命周期钩子
+这些方法叫做：生命周期钩子
 
 These methods are called "lifecycle hooks".
 
-`componentDidMount()` 钩子在组件输入后运行
+`componentDidMount()` 钩子在组件输出后运行
 
 The `componentDidMount()` hook runs after the component output has been rendered to the DOM. This is a good place to set up a timer:
 
@@ -365,15 +369,15 @@ Now the clock ticks every second.
 
 Let's quickly recap what's going on and the order in which the methods are called:
 
-1) When `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+1) 当 `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
 
-2) React then calls the `Clock` component's `render()` method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the `Clock`'s render output.
+2) React 唤起 `Clock` 组件的 `render()` 方法. This is how React learns what should be displayed on the screen. React then updates the DOM to match the `Clock`'s render output.
 
-3) When the `Clock` output is inserted in the DOM, React calls the `componentDidMount()` lifecycle hook. Inside it, the `Clock` component asks the browser to set up a timer to call `tick()` once a second.
+3) 当 `Clock` 输出在DOM中插入。 React 调用 `componentDidMount()` lifecycle hook. Inside it, the `Clock` component asks the browser to set up a timer to call `tick()` 每秒一次.
 
-4) Every second the browser calls the `tick()` method. Inside it, the `Clock` component schedules a UI update by calling `setState()` with an object containing the current time. Thanks to the `setState()` call, React knows the state has changed, and calls `render()` method again to learn what should be on the screen. This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+4) 每秒浏览器调用 `tick()` 方法. Inside it, the `Clock` component schedules a UI update by calling `setState()` with an object containing the current time. Thanks to the `setState()` call, React knows the state has changed, and calls `render()` method again to learn what should be on the screen. This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
 
-5) If the `Clock` component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle hook so the timer is stopped.
+5) 如果 `Clock` 组件 从 DOM 中移除, React 唤起 `componentWillUnmount()` 生命周期钩子，timer 停止.
 
 ## 正确使用 state
 ## Using State Correctly
@@ -383,12 +387,16 @@ There are three things you should know about `setState()`.
 ###不要直接修改state
 ### Do Not Modify State Directly
 
-For example, this will not re-render a component:
+例如，这将不会重新渲染一个组件
+
+例如：, this will not re-render a component:
 
 ```js
 // Wrong
 this.state.comment = 'Hello';
 ```
+
+相反，使用`setState()`:
 
 Instead, use `setState()`:
 
@@ -396,6 +404,7 @@ Instead, use `setState()`:
 // Correct
 this.setState({comment: 'Hello'});
 ```
+唯一可分配 `this.state`的地方是在构造函数中
 
 The only place where you can assign `this.state` is the constructor.
 
@@ -404,9 +413,9 @@ The only place where you can assign `this.state` is the constructor.
 
 React may batch multiple `setState()` calls into a single update for performance.
 
-Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+Because `this.props` 和 `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
 
-For example, this code may fail to update the counter:
+例如：, this code may fail to update the counter:
 
 ```js
 // Wrong
@@ -426,7 +435,6 @@ this.setState((prevState, props) => ({
 
 上面我们使用了箭头函数 [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)，
 但他也会在常规函数中运行。
-but it also works with regular functions:
 
 ```js
 // Correct
@@ -440,9 +448,9 @@ this.setState(function(prevState, props) {
 ### 状态更新已合并
 ### State Updates are Merged
 
-When you call `setState()`, React merges the object you provide into the current state.
+当你唤起 `setState()`, React merges the object you provide into the current state.
 
-For example, your state may contain several independent variables:
+例如, 你的状态可能包含了几个独立变量。
 
 ```js{4,5}
   constructor(props) {

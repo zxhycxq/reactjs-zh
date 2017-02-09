@@ -9,7 +9,7 @@ To write an uncontrolled component, instead of writing an event handler for ever
 
 例如，这段代码在未控制组件中接收了一个name。
 
-For example, this code accepts a single name in an uncontrolled component:
+例如：, this code accepts a single name in an uncontrolled component:
 
 ```javascript{8,17}
 class NameForm extends React.Component {

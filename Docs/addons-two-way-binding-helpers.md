@@ -17,7 +17,7 @@ var LinkedStateMixin = React.addons.LinkedStateMixin; // ES5 with react-with-add
 
 In React, data flows one way: from owner to child. This is because data only flows one direction in [the Von Neumann model of computing](https://en.wikipedia.org/wiki/Von_Neumann_architecture). You can think of it as "one-way data binding."
 
-However, there are lots of applications that require you to read some data and flow it back into your program. For example, when developing forms, you'll often want to update some React `state` when you receive user input. Or perhaps you want to perform layout in JavaScript and react to changes in some DOM element size.
+However, there are lots of applications that require you to read some data and flow it back into your program. 例如：, when developing forms, you'll often want to update some React `state` when you receive user input. Or perhaps you want to perform layout in JavaScript and react to changes in some DOM element size.
 
 In React, you would implement this by listening to a "change" event, read from your data source (usually the DOM) and call `setState()` on one of your components. "Closing the data flow loop" explicitly leads to more understandable and easier-to-maintain programs. See [our forms documentation](/react/docs/forms.html) for more information.
 

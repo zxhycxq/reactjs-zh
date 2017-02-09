@@ -64,7 +64,7 @@ class TodoList extends React.Component {
 
 In this component, when a new item is added to `ReactCSSTransitionGroup` it will get the `example-enter` CSS class and the `example-enter-active` CSS class added in the next tick. This is a convention based on the `transitionName` prop.
 
-You can use these classes to trigger a CSS animation or transition. For example, try adding this CSS and adding a new list item:
+You can use these classes to trigger a CSS animation or transition. 例如：, try adding this CSS and adding a new list item:
 
 ```css
 .example-enter {
@@ -184,7 +184,7 @@ render() {
 
 ### Animating One or Zero Items
 
-In the example above, we rendered a list of items into `ReactCSSTransitionGroup`. However, the children of `ReactCSSTransitionGroup` can also be one or zero items. This makes it possible to animate a single element entering or leaving. Similarly, you can animate a new element replacing the current element. For example, we can implement a simple image carousel like this:
+In the example above, we rendered a list of items into `ReactCSSTransitionGroup`. However, the children of `ReactCSSTransitionGroup` can also be one or zero items. This makes it possible to animate a single element entering or leaving. Similarly, you can animate a new element replacing the current element. 例如：, we can implement a simple image carousel like this:
 
 ```javascript{10}
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -205,7 +205,7 @@ function ImageCarousel(props) {
 
 ### Disabling Animations
 
-You can disable animating `enter` or `leave` animations if you want. For example, sometimes you may want an `enter` animation and no `leave` animation, but `ReactCSSTransitionGroup` waits for an animation to complete before removing your DOM node. You can add `transitionEnter={false}` or `transitionLeave={false}` props to `ReactCSSTransitionGroup` to disable these animations.
+You can disable animating `enter` or `leave` animations if you want. 例如：, sometimes you may want an `enter` animation and no `leave` animation, but `ReactCSSTransitionGroup` waits for an animation to complete before removing your DOM node. You can add `transitionEnter={false}` or `transitionLeave={false}` props to `ReactCSSTransitionGroup` to disable these animations.
 
 > Note:
 >
@@ -234,7 +234,7 @@ var ReactTransitionGroup = React.addons.TransitionGroup; // ES5 with react-with-
 
 #### Rendering a Different Component
 
-`ReactTransitionGroup` renders as a `span` by default. You can change this behavior by providing a `component` prop. For example, here's how you would render a `<ul>`:
+`ReactTransitionGroup` renders as a `span` by default. You can change this behavior by providing a `component` prop. 例如：, here's how you would render a `<ul>`:
 
 ```javascript{1}
 <ReactTransitionGroup component="ul">
@@ -242,7 +242,7 @@ var ReactTransitionGroup = React.addons.TransitionGroup; // ES5 with react-with-
 </ReactTransitionGroup>
 ```
 
-Any additional, user-defined, properties will become properties of the rendered component. For example, here's how you would render a `<ul>` with CSS class:
+Any additional, user-defined, properties will become properties of the rendered component. 例如：, here's how you would render a `<ul>` with CSS class:
 
 ```javascript{1}
 <ReactTransitionGroup component="ul" className="animated-list">

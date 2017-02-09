@@ -6,9 +6,11 @@ In some cases, you want to pass data through the component tree without having t
 You can do this directly in React with the powerful "context" API.
 
 ## Why Not To Use Context
-## 为什么使用Context
+## 为什么使用上下文
 
 The vast majority of applications do not need to use context.
+
+实验性的API
 
 If you want your application to be stable, don't use context. It is an experimental API and it is likely to break in future releases of React.
 
@@ -105,7 +107,7 @@ If `contextTypes` is not defined, then `context` will be an empty object.
 
 ## Parent-Child Coupling
 
-Context can also let you build an API where parents and children communicate. For example, one library that works this way is [React Router V4](https://react-router.now.sh/basic):
+Context can also let you build an API where parents and children communicate. 例如：, one library that works this way is [React Router V4](https://react-router.now.sh/basic):
 
 ```javascript
 const BasicExample = () => (
@@ -129,7 +131,7 @@ const BasicExample = () => (
 
 By passing down some information from the `Router` component, each `Link` and `Match` can communicate back to the containing `Router`.
 
-Before you build components with an API similar to this, consider if there are cleaner alternatives. For example, you can pass entire React component as props if you'd like to.
+Before you build components with an API similar to this, consider if there are cleaner alternatives. 例如：, you can pass entire React component as props if you'd like to.
 
 ## Referencing Context in Lifecycle Methods
 

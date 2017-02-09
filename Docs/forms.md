@@ -1,6 +1,7 @@
+在react中，HTML form 元素与DOM元素稍有不同
 
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. 例如：, this form in plain HTML accepts a single name:
 
 ```html
 <form>
@@ -20,7 +21,7 @@ In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically
 
 We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
 
-For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
+例如：, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
 
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
@@ -59,7 +60,7 @@ class NameForm extends React.Component {
 
 Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
 
-With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. For example, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
+With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. 例如：, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
 
 ```javascript{2}
 handleChange(event) {
@@ -121,7 +122,7 @@ Notice that `this.state.value` is initialized in the constructor, so that the te
 
 下拉菜单
 
-In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
+In HTML, `<select>` creates a drop-down list. 例如：, this HTML creates a drop-down list of flavors:
 
 ```html
 <select>
@@ -132,7 +133,7 @@ In HTML, `<select>` creates a drop-down list. For example, this HTML creates a d
 </select>
 ```
 
-Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
+Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. 例如：:
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {

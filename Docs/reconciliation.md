@@ -27,7 +27,7 @@ Whenever the root elements have different types, React will tear down the old tr
 
 When tearing down a tree, old DOM nodes are destroyed. Component instances receive `componentWillUnmount()`. When building up a new tree, new DOM nodes are inserted into the DOM. Component instances receive `componentWillMount()` and then `componentDidMount()`. Any state associated with the old tree is lost.
 
-Any components below the root will also get unmounted and have their state destroyed. For example, when diffing:
+Any components below the root will also get unmounted and have their state destroyed. 例如：, when diffing:
 
 ```xml
 <div>
@@ -44,7 +44,7 @@ This will destroy the old `Counter` and remount a new one.
 ### DOM Elements Of The Same Type
 ### 同种类型的DOM元素
 
-When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. For example:
+When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. 例如：:
 
 ```xml
 <div className="before" title="stuff" />
@@ -56,7 +56,7 @@ By comparing these two elements, React knows to only modify the `className` on t
 
 当更新样式的时候，react知道只修改底层DOM节点上的className
 
-When updating `style`, React also knows to update only the properties that changed. For example:
+When updating `style`, React also knows to update only the properties that changed. 例如：:
 
 ```xml
 <div style={{'{{'}}color: 'red', fontWeight: 'bold'}} />
@@ -80,7 +80,7 @@ Next, the `render()` method is called and the diff algorithm recurses on the pre
 
 By default, when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there's a difference.
 
-For example, when adding an element at the end of the children, converting between these two trees works well:
+例如：, when adding an element at the end of the children, converting between these two trees works well:
 
 ```xml
 <ul>
@@ -97,7 +97,7 @@ For example, when adding an element at the end of the children, converting betwe
 
 React will match the two `<li>first</li>` trees, match the two `<li>second</li>` trees, and then insert the `<li>third</li>` tree.
 
-If you implement it naively, inserting an element at the beginning has worse performance. For example, converting between these two trees works poorly:
+If you implement it naively, inserting an element at the beginning has worse performance. 例如：, converting between these two trees works poorly:
 
 ```xml
 <ul>
@@ -116,9 +116,9 @@ React will mutate every child instead of realizing it can keep the `<li>Duke</li
 
 ### Keys
 
-为解决这个issue, React 支持 `key` 属性. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a `key` to our inefficient example above can make the tree conversion efficient:
+为解决这个issue, React 支持 `key` 属性. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. 例如：, adding a `key` to our inefficient example above can make the tree conversion efficient:
 
-In order to solve this issue, React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a `key` to our inefficient example above can make the tree conversion efficient:
+In order to solve this issue, React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. 例如：, adding a `key` to our inefficient example above can make the tree conversion efficient:
 
 ```xml
 <ul>

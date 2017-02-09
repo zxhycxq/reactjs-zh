@@ -48,7 +48,7 @@ Call [`createRenderer()`](#createrenderer) in your tests to create a shallow ren
 
 After `shallowRenderer.render()` has been called, you can use [`shallowRenderer.getRenderOutput()`](#shallowrenderer.getrenderoutput) to get the shallowly rendered output.
 
-You can then begin to assert facts about the output. For example, if you have the following component:
+You can then begin to assert facts about the output. 例如：, if you have the following component:
 
 ```javascript
 function MyComponent() {

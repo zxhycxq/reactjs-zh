@@ -108,7 +108,7 @@ class CounterButton extends React.PureComponent {
 
 Most of the time, you can use `React.PureComponent` instead of writing your own `shouldComponentUpdate`. It only does a shallow comparison, so you can't use it if the props or state may have been mutated in a way that a shallow comparison would miss.
 
-This can be a problem with more complex data structures. For example, let's say you want a `ListOfWords` component to render a comma-separated list of words, with a parent `WordAdder` component that lets you click a button to add a word to the list. This code does *not* work correctly:
+This can be a problem with more complex data structures. 例如：, let's say you want a `ListOfWords` component to render a comma-separated list of words, with a parent `WordAdder` component that lets you click a button to add a word to the list. This code does *not* work correctly:
 
 ```javascript
 class ListOfWords extends React.PureComponent {
@@ -148,7 +148,7 @@ The problem is that `PureComponent` will do a simple comparison between the old 
 
 ## The Power Of Not Mutating Data
 
-The simplest way to avoid this problem is to avoid mutating values that you are using as props or state. For example, the `handleClick` method above could be rewritten using `concat` as:
+The simplest way to avoid this problem is to avoid mutating values that you are using as props or state. 例如：, the `handleClick` method above could be rewritten using `concat` as:
 
 ```javascript
 handleClick() {
@@ -168,7 +168,7 @@ handleClick() {
 };
 ```
 
-You can also rewrite code that mutates objects to avoid mutation, in a similar way. For example, let's say we have an object named `colormap` and we want to write a function that changes `colormap.right` to be `'blue'`. We could write:
+You can also rewrite code that mutates objects to avoid mutation, in a similar way. 例如：, let's say we have an object named `colormap` and we want to write a function that changes `colormap.right` to be `'blue'`. We could write:
 
 ```js
 function updateColorMap(colormap) {
@@ -204,7 +204,7 @@ If you're using Create React App, both `Object.assign` and the object spread syn
 * *Persistent*: new collections can be created from a previous collection and a mutation such as set. The original collection is still valid after the new collection is created.
 * *Structural Sharing*: new collections are created using as much of the same structure as the original collection as possible, reducing copying to a minimum to improve performance.
 
-Immutability makes tracking changes cheap. A change will always result in a new object so we only need to check if the reference to the object has changed. For example, in this regular JavaScript code:
+Immutability makes tracking changes cheap. A change will always result in a new object so we only need to check if the reference to the object has changed. 例如：, in this regular JavaScript code:
 
 ```javascript
 const x = { foo: "bar" };

@@ -22,7 +22,7 @@ In this document, we'll discuss why higher-order components are useful, and how 
 
 Components are the primary unit of code reuse in React. However, you'll find that some patterns aren't a straightforward fit for traditional components.
 
-For example, say you have a `CommentList` component that subscribes to an external data source to render a list of comments:
+例如：, say you have a `CommentList` component that subscribes to an external data source to render a list of comments:
 
 ```js
 class CommentList extends React.Component {
@@ -161,9 +161,9 @@ Note that an HOC doesn't modify the input component, nor does it use inheritance
 
 And that's it! The wrapped component receives all the props of the container, along with a new prop, `data`, which it uses to render its output. The HOC isn't concerned with how or why the data is used, and the wrapped component isn't concerned with where the data came from.
 
-Because `withSubscription` is a normal function, you can add as many or as few arguments as you like. For example, you may want to make the name of the `data` prop configurable, to further isolate the HOC from the wrapped component. Or you could accept an argument that configures `shouldComponentUpdate`, or one that configures the data source. These are all possible because the HOC has full control over how the component is defined.
+Because `withSubscription` is a normal function, you can add as many or as few arguments as you like. 例如：, you may want to make the name of the `data` prop configurable, to further isolate the HOC from the wrapped component. Or you could accept an argument that configures `shouldComponentUpdate`, or one that configures the data source. These are all possible because the HOC has full control over how the component is defined.
 
-Like components, the contract between `withSubscription` and the wrapped component is entirely props-based. This makes it easy to swap one HOC for a different one, as long as they provide the same props to the wrapped component. This may be useful if you change data-fetching libraries, for example.
+Like components, the contract between `withSubscription` and the wrapped component is entirely props-based. This makes it easy to swap one HOC for a different one, as long as they provide the same props to the wrapped component. This may be useful if you change data-fetching libraries, 例如：.
 
 ## Don't Mutate the Original Component. Use Composition.
 
@@ -336,7 +336,7 @@ In those rare cases where you need to apply an HOC dynamically, you can also do 
 
 ### Static Methods Must Be Copied Over
 
-Sometimes it's useful to define a static method on a React component. For example, Relay containers expose a static method `getFragment` to facilitate the composition of GraphQL fragments.
+Sometimes it's useful to define a static method on a React component. 例如：, Relay containers expose a static method `getFragment` to facilitate the composition of GraphQL fragments.
 
 When you apply an HOC to a component, though, the original component is wrapped with a container component. That means the new component does not have any of the static methods of the original component.
 

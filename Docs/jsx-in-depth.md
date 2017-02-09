@@ -45,25 +45,23 @@ Since JSX compiles into calls to `React.createElement`,
  the `React` library must also always be in scope from your JSX code.
 例如，在这段代码中，所有的导入都是必须的。
  虽然`React` 和 `CustomButton` 不是直接引用自js
- directly referenced from JavaScript:
 
 ```js{1,2,5}
 import React from 'react';
 import CustomButton from './CustomButton';
 
 function WarningButton() {
-  // return React.createElement(CustomButton, {color: 'red'}, null);
+  // 返回 React.createElement(CustomButton, {color: 'red'}, null);
   return <CustomButton color="red" />;
 }
 ```
 
 如果你不使用js打包机，增加 React 作为 script 标签,
  他已经作为全局`React` 存在于作用域。
- it is already in scope as a `React` global.
 
 ### Using Dot Notation for JSX Type
 
-You can also refer to a React component using dot-notation from within JSX. This is convenient if you have a single module that exports many React components. For example, if `MyComponents.DatePicker` is a component, you can use it directly from JSX with:
+You can also refer to a React component using 点表达式 from within JSX. This is convenient if you have a single module that exports many React components. 例如：, if `MyComponents.DatePicker` is a 组件, you can use it directly from JSX with:
 
 ```js{10}
 import React from 'react';
@@ -88,41 +86,43 @@ When an element type starts with a lowercase letter, it refers to a built-in com
 
 We recommend naming components with a capital letter. If you do have a component that starts with a lowercase letter, assign it to a capitalized variable before using it in JSX.
 
-For example, this code will not run as expected:
+例如：, this code will not run as expected:
 
 ```js{3,4,10,11}
 import React from 'react';
 
-// Wrong! This is a component and should have been capitalized:
+// 警告! This is a component and should have been capitalized:
 function hello(props) {
-  // Correct! This use of <div> is legitimate because div is a valid HTML tag:
+  // 正确! This use of <div> is legitimate because div is a valid HTML tag:
   return <div>Hello {props.toWhat}</div>;
 }
 
 function HelloWorld() {
-  // Wrong! React thinks <hello /> is an HTML tag because it's not capitalized:
+  // 警告! React thinks <hello /> is an HTML tag because it's not capitalized:
   return <hello toWhat="World" />;
 }
 ```
 
-To fix this, we will rename `hello` to `Hello` and use `<Hello />` when referring to it:
+To fix this, we will 重命名 `hello` to `Hello` and use `<Hello />` when referring to it:
 
 ```js{3,4,10,11}
 import React from 'react';
 
-// Correct! This is a component and should be capitalized:
+// 正确! This is a component and should be capitalized:
 function Hello(props) {
-  // Correct! This use of <div> is legitimate because div is a valid HTML tag:
+  // 正确! This use of <div> is legitimate because div is a valid HTML tag:
   return <div>Hello {props.toWhat}</div>;
 }
 
 function HelloWorld() {
-  // Correct! React knows <Hello /> is a component because it's capitalized.
+  // 正确! React knows <Hello /> is a component because it's capitalized.
   return <Hello toWhat="World" />;
 }
 ```
 
 ### Choosing the Type at Runtime
+
+不可使用普通表达式作为react元素类型，
 
 You cannot use a general expression as the React element type. If you do want to use a general expression to indicate the type of the element, just assign it to a capitalized variable first. This often comes up when you want to render a different component based on a prop:
 
@@ -136,7 +136,7 @@ const components = {
 };
 
 function Story(props) {
-  // Wrong! JSX type can't be an expression.
+  // 警告! JSX type can't be an expression.
   return <components[props.storyType] story={props.story} />;
 }
 ```
@@ -167,7 +167,7 @@ There are several different ways to specify props in JSX.
 
 你可传递任何js表达式作为一个 prop, 用{}包裹。
 
-You can pass any JavaScript expression as a prop, by surrounding it with `{}`. For example, in this JSX:
+You can pass any JavaScript expression as a prop, by surrounding it with `{}`. 例如：, in this JSX:
 
 ```js
 <MyComponent foo={1 + 2 + 3 + 4} />
@@ -180,7 +180,7 @@ For `MyComponent`, the value of `props.foo` will be `10` because the expression 
 `if` 声明 和 `for` 循环不属于js表达式，故在jsx中无法直接使用，
 你可以把这些放在周围的代码中。 
 
-`if` statements and `for` loops are not expressions in JavaScript, so they can't be used in JSX directly. Instead, you can put these in the surrounding code. For example:
+`if` statements and `for` loops are not expressions in JavaScript, so they can't be used in JSX directly. Instead, you can put these in the surrounding code. 例如：:
 
 ```js{3-7}
 function NumberDescriber(props) {
@@ -232,7 +232,7 @@ If you pass no value for a prop, it defaults to `true`. These two JSX expression
 
 <MyTextBox autocomplete={true} />
 ```
-通常来说，不建议这样使用，因为
+通常来说，不建议这样使用，因为易迷惑
 
 In general, we don't recommend using this because it can be confused with the [ES6 object shorthand](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015) `{foo}` which is short for `{foo: foo}` rather than `{foo: true}`. This behavior is just there so that it matches the behavior of HTML.
 
@@ -254,7 +254,7 @@ function App2() {
 
 Spread attributes can be useful when you are building generic containers. However, they can also make your code messy by making it easy to pass a lot of irrelevant props to components that don't care about them. We recommend that you use this syntax sparingly.
 
-我们建议谨慎使用此方法。
+很有用，我们建议谨慎使用此方法。
 
 ## Children in JSX
 
@@ -262,7 +262,7 @@ In JSX expressions that contain both an opening tag and a closing tag, the conte
 
 ### String Literals
 
-You can put a string between the opening and closing tags and `props.children` will just be that string. This is useful for many of the built-in HTML elements. For example:
+You can put a string between the opening and closing tags and `props.children` will just be that string. This is useful for many of the built-in HTML elements. 例如：:
 
 ```js
 <MyComponent>Hello world!</MyComponent>
@@ -296,7 +296,7 @@ JSX removes whitespace at the beginning and ending of a line. It also removes bl
 
 ### JSX Children
 
-You can provide more JSX elements as the children. This is useful for displaying nested components:
+你可提供更多的 JSX 元素 as the children. This is useful for displaying nested components:
 
 ```js
 <MyContainer>
@@ -317,7 +317,7 @@ You can mix together different types of children, so you can use string literals
 </div>
 ```
 
-A React component can't return multiple React elements, but a single JSX expression can have multiple children, so if you want a component to render multiple things you can wrap it in a `div` like this.
+A React 组件 can't return multiple React elements, but a single JSX expression can have multiple children, so if you want a component to render multiple things you can wrap it in a `div` like this.
 
 ### JavaScript Expressions
 ### js 表达式
@@ -325,7 +325,7 @@ A React component can't return multiple React elements, but a single JSX express
 你可以传递任何js表达式作为子元素，通过闭合的{}方式。
 下面的对等。
 
-You can pass any JavaScript expression as children, by enclosing it within `{}`. For example, these expressions are equivalent:
+You can pass any JavaScript expression as children, by enclosing it within `{}`. 例如：, these expressions are equivalent:
 
 ```js
 <MyComponent>foo</MyComponent>
@@ -335,7 +335,7 @@ You can pass any JavaScript expression as children, by enclosing it within `{}`.
 
 渲染任意长度的jsx列表的时候有用
 
-This is often useful for rendering a list of JSX expressions of arbitrary length. For example, this renders an HTML list:
+This is often useful for rendering a list of JSX expressions of arbitrary length. 例如：, this renders an HTML list:
 
 ```js{2,9}
 function Item(props) {
@@ -362,7 +362,7 @@ function Hello(props) {
 
 ### Functions as Children
 
-Normally, JavaScript expressions inserted in JSX will evaluate to a string, a React element, or a list of those things. However, `props.children` works just like any other prop in that it can pass any sort of data, not just the sorts that React knows how to render. For example, if you have a custom component, you could have it take a callback as `props.children`:
+Normally, JavaScript expressions inserted in JSX will evaluate to a string, a React element, or a list of those things. However, `props.children` works just like any other prop in that it can pass any sort of data, not just the sorts that React knows how to render. 例如：, if you have a custom component, you could have it take a callback as `props.children`:
 
 ```js{4,13}
 function ListOfTenThings() {
@@ -383,7 +383,7 @@ function Repeat(props) {
 }
 ```
 
-Children passed to a custom component can be anything, as long as that component transforms them into something React can understand before rendering. This usage is not common, but it works if you want to stretch what JSX is capable of.
+Children passed to a 自定义组件 can be anything, as long as that component transforms them into something React can understand before rendering. This usage is not common, but it works if you want to stretch what JSX is capable of.
 
 ### Booleans, Null, and Undefined Are Ignored
 
@@ -410,7 +410,7 @@ This can be useful to conditionally render React elements. This JSX only renders
 </div>
 ```
 
-One caveat is that some ["falsy" values](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), such as the `0` number, are still rendered by React. For example, this code will not behave as you might expect because `0` will be printed when `props.messages` is an empty array:
+One caveat is that some ["falsy" values](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), such as the `0` number, are still rendered by React. 例如：, this code will not behave as you might expect because `0` will be printed when `props.messages` is an empty array:
 
 ```js{2}
 <div>

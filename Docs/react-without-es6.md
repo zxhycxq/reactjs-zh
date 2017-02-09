@@ -28,7 +28,7 @@ The API of ES6 classes is similar to `React.createClass` with a few exceptions.
 
 ## 声明Prop类型和默认 Props
 
-作为组件自身的属性
+使用函数和ES6类，`propTypes` and `defaultProps` 作为组件自身的属性：
 
 With functions and ES6 classes, `propTypes` and `defaultProps` are defined as properties on the components themselves:
 
@@ -101,6 +101,8 @@ var Counter = React.createClass({
 
 In React components declared as ES6 classes, methods follow the same semantics as regular ES6 classes. This means that they don't automatically bind `this` to the instance. You'll have to explicitly use `.bind(this)` in the constructor:
 
+在 React 组件中声明ES6类， 方法遵循与常规ES6类相同的语义，
+这意味着他们不自动绑定到实例，
 你必须在控制器明确地使用  .bind(this)
 
 ```javascript
@@ -117,7 +119,7 @@ class SayHello extends React.Component {
   }
 
   render() {
-    // Because `this.handleClick` is bound, we can use it as an event handler.
+    // 因为 `this.handleClick` 已经绑定, 我们可使用它作为事件处理器
     return (
       <button onClick={this.handleClick}>
         Say hello
@@ -166,7 +168,7 @@ class SayHello extends React.Component {
     super(props);
     this.state = {message: 'Hello!'};
   }
-  // WARNING: this syntax is experimental!
+  // 警告: this syntax is experimental!
   // Using an arrow here binds the method:
   handleClick = () => {
     alert(this.state.message);
@@ -182,27 +184,29 @@ class SayHello extends React.Component {
 }
 ```
 
-实验性质的！！
+实验性质的！！或将改变
 
 Please note that the syntax above is **experimental** and the syntax may change, or the proposal might not make it into the language.
 
 If you'd rather play it safe, you have a few options:
 
-* Bind methods in the constructor.
-* Use arrow functions, e.g. `onClick={(e) => this.handleClick(e)}`.
-* Keep using `React.createClass()`.
+* 在构造函数中绑定方法
+* 用箭头函数, e.g. `onClick={(e) => this.handleClick(e)}`.
+* 继续使用 `React.createClass()`.
 
 ## Mixins
 
 >**Note:**
 >
->ES6 launched without any mixin support. Therefore, there is no support for mixins when you use React with ES6 classes.
+>ES6 launched without any mixin support. 故, there is no support for mixins when you use React with ES6 classes.
 >
 >**We also found numerous issues in codebases using mixins, [and don't recommend using them in the new code](/react/blog/2016/07/13/mixins-considered-harmful.html).**
 >
 >This section exists only for the reference.
 
 Sometimes very different components may share some common functionality. These are sometimes called [cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern). [`React.createClass`](/react/docs/top-level-api.html#react.createclass) lets you use a legacy `mixins` system for that.
+
+横切关注点
 
 One common use case is a component wanting to update itself on a time interval. It's easy to use `setInterval()`, but it's important to cancel your interval when you don't need it anymore to save memory. React provides [lifecycle methods](/react/docs/working-with-the-browser.html#component-lifecycle) that let you know when a component is about to be created or destroyed. Let's create a simple mixin that uses these methods to provide an easy `setInterval()` function that will automatically get cleaned up when your component is destroyed.
 
@@ -220,7 +224,7 @@ var SetIntervalMixin = {
 };
 
 var TickTock = React.createClass({
-  mixins: [SetIntervalMixin], // Use the mixin
+  mixins: [SetIntervalMixin], // 用 mixin
   getInitialState: function() {
     return {seconds: 0};
   },
@@ -246,3 +250,4 @@ ReactDOM.render(
 ```
 
 If a component is using multiple mixins and several mixins define the same lifecycle method (i.e. several mixins want to do some cleanup when the component is destroyed), all of the lifecycle methods are guaranteed to be called. Methods defined on mixins run in the order mixins were listed, followed by a method call on the component.
+[已经]

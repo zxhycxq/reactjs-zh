@@ -162,7 +162,7 @@ componentDidMount()
 componentWillReceiveProps(nextProps)
 ```
 
-`componentWillReceiveProps()` is invoked before a mounted component receives new props. If you need to update the state in response to prop changes (for example, to reset it), you may compare `this.props` and `nextProps` and perform state transitions using `this.setState()` in this method.
+`componentWillReceiveProps()` is invoked before a mounted component receives new props. If you need to update the state in response to prop changes (例如：, to reset it), you may compare `this.props` and `nextProps` and perform state transitions using `this.setState()` in this method.
 
 Note that React may call this method even if the props have not changed, so make sure to compare the current and next values if you only want to handle changes. This may occur when the parent component causes your component to re-render.
 
@@ -322,7 +322,7 @@ Normally you should try to avoid all uses of `forceUpdate()` and only read from 
 
 ### `defaultProps`
 
-`defaultProps` can be defined as a property on the component class itself, to set the default props for the class. This is used for undefined props, but not for null props. For example:
+`defaultProps` can be defined as a property on the component class itself, to set the default props for the class. This is used for undefined props, but not for null props. 例如：:
 
 ```js
 class CustomButton extends React.Component {
@@ -373,7 +373,7 @@ The `displayName` string is used in debugging messages. JSX sets this value auto
 
 `propTypes` can be defined as a property on the component class itself, to define what types the props should be. It should be a map from prop names to types as defined in [`React.PropTypes`](/react/docs/react-api.html#react.proptypes). In development mode, when an invalid value is provided for a prop, a warning will be shown in the JavaScript console. In production mode, `propTypes` checks are skipped for efficiency.
 
-For example, this code ensures that the `color` prop is a string:
+例如：, this code ensures that the `color` prop is a string:
 
 ```js
 class CustomButton extends React.Component {
@@ -410,7 +410,7 @@ state是用户定义的，它应该是纯JavaScript对象。
 如果你不在render（）中使用它，它不应该在状态。
  例如，您可以将定时器ID直接放在实例上。
 
-If you don't use it in `render()`, it shouldn't be on the state. For example, you can put timer IDs directly on the instance.
+If you don't use it in `render()`, it shouldn't be on the state. 例如：, you can put timer IDs directly on the instance.
 
 See [State and Lifecycle](/react/docs/state-and-lifecycle.html) for more information about the state.
 

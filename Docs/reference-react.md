@@ -37,11 +37,14 @@ See [Using React without JSX](/react/docs/react-without-jsx.html) for more infor
 
 `React` also provides some other APIs:
 
+也支持其他APIS
+
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
 - [`React.Children`](#react.children)
 
 ### Typechecking with PropTypes
+### 类型检查 with PropTypes
 
 You can use `React.PropTypes` to run typechecking on the props for a component.
 
@@ -76,10 +79,13 @@ If you're using [`react-with-addons.js`](/react/docs/addons.html), the React Add
 * * *
 
 ## Reference
+## 参考
 
 ### `React.Component`
 
 `React.Component` is the base class for React components when they are defined using [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes).
+
+当使用es6 类定义的时候，`React.Component`是基础类。
 
 ```javascript
 class Greeting extends React.Component {
@@ -139,7 +145,7 @@ React.createElement(
 
 Create and return a new [React element](/react/docs/rendering-elements.html) of the given type. The type argument can be either a tag name string (such as `'div'` or `'span'`), or a [React component](/react/docs/components-and-props.html) type (a class or a function).
 
-Convenience wrappers around `React.createElement()` for DOM components are provided by `React.DOM`. For example, `React.DOM.a(...)` is a convenience wrapper for `React.createElement('a', ...)`. They are considered legacy, and we encourage you to either use JSX or use `React.createElement()` directly instead.
+Convenience wrappers around `React.createElement()` for DOM components are provided by `React.DOM`. 例如：, `React.DOM.a(...)` is a convenience wrapper for `React.createElement('a', ...)`. They are considered legacy, and we encourage you to either use JSX or use `React.createElement()` directly instead.
 
 Code written with [JSX](/react/docs/introducing-jsx.html) will be converted to use `React.createElement()`. You will not typically invoke `React.createElement()` directly if you are using JSX. See [React Without JSX](/react/docs/react-without-jsx.html) to learn more.
 
