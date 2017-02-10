@@ -5,13 +5,10 @@ Handling events with React elements is very similar to handling events on DOM el
 * React 事件以驼峰命名，而非小写
 * 使用JSX传递一个函数作为事件处理程序，而不是一个字符串。
 
-
 * React events are named using camelCase, rather than lowercase.
 * With JSX you pass a function as the event handler, rather than a string.
 
 例如，在html中
-
-例如：, the HTML:
 
 ```html
 <button onclick="activateLasers()">
@@ -28,7 +25,7 @@ is slightly different in React:
 </button>
 ```
 在react中，另一个不同是，你不能返回false去阻止默认行为。
-你必须调明确地用preventDefault。
+你必须调明确地用preventDefault 。
 例如：使用纯HTML，为了防止打开新页面的默认链接行为，您可以这样写：
 
 Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. 例如：, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
