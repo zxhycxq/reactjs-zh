@@ -26,7 +26,7 @@ class HelloMessage extends React.Component {
 
 > Web Components often expose an imperative API.例如, a `video` Web Component might expose `play()` and `pause()` functions. To access the imperative APIs of a Web Component, you will need to use a ref to interact with the DOM node directly. If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
 >
-> Events emitted by a Web Component may not properly propagate through a React render tree.
+> Events emitted by a Web Component may not properly propagate through a React 渲染树.
 > You will need to manually attach event handlers to handle these events within your React components.
 
 一个常见的困惑是web组件使用class而非className。
