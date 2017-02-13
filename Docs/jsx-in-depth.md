@@ -352,7 +352,7 @@ function TodoList() {
 }
 ```
 
-JavaScript expressions can be mixed with other types of children. This is often useful in lieu of string templates:
+JavaScript 表达式 can be mixed with other types of children. This is often useful in lieu of string templates:
 
 ```js{2}
 function Hello(props) {

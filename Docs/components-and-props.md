@@ -79,10 +79,10 @@ ReactDOM.render(
 
 Let's recap what happens in this example:
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+1. 我们调用 `ReactDOM.render()` 用 `<Welcome name="Sara" />` 元素.
+2. React 调用 `Welcome` 组件，通过 `{name: 'Sara'}` 作为 props.
+3. 我们的 `Welcome` 组件 返回一个 `<h1>Hello, Sara</h1>` 元素 as the result.
+4. React DOM efficiently 更新 DOM to match `<h1>Hello, Sara</h1>`.
 
 >**Caveat:**
 >
@@ -141,6 +141,8 @@ Typically, new React apps have a single `App` component at the very top. However
 ## 提取组件
 ## Extracting Components
 
+别害怕把组件分为更小的组件
+
 Don't be afraid to split components into smaller components.
 
 例如：, consider this `Comment` component:
@@ -179,7 +181,7 @@ It accepts `author` (an object), `text` (a string), and `date` (a date) as props
 
 This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
 
-First, we will extract `Avatar`:
+首先，我们提取 `Avatar`:
 
 ```js{3-6}
 function Avatar(props) {
@@ -279,9 +281,11 @@ function sum(a, b) {
   return a + b;
 }
 ```
-[纯函数] (什么叫pure function（纯函数） - hongweigg的专栏 - 博客频道 - CSDN.NET  http://blog.csdn.net/hongweigg/article/details/44035283)
+> [纯函数] (什么叫pure function（纯函数） - hongweigg的专栏 - 博客频道 - CSDN.NET  http://blog.csdn.net/hongweigg/article/details/44035283)
 
-因为它们不尝试改变它们的输入，
+> 如sin(),length();反之如random(),printf(); 
+
+此类函数被称为：纯函数。因为它们不尝试改变它们的输入，
 并且对于相同的输入总是返回相同的结果。
 
 Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.

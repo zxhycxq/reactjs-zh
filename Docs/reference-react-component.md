@@ -236,6 +236,8 @@ Use this as an opportunity to operate on the DOM when the component has been upd
 componentWillUnmount()
 ```
 
+`componentWillUnmount()` 一个组件被卸载和销毁之前被立即调用. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any DOM 元素 that were created in `componentDidMount`
+
 `componentWillUnmount()` is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any DOM elements that were created in `componentDidMount`
 
 * * *
@@ -322,6 +324,8 @@ Normally you should try to avoid all uses of `forceUpdate()` and only read from 
 
 ### `defaultProps`
 
+`defaultProps` can be defined as a property on the 组件类本身, 设置类的默认props. 用于undefined props, 但非为 null props. 例如：:
+
 `defaultProps` can be defined as a property on the component class itself, to set the default props for the class. This is used for undefined props, but not for null props. 例如：:
 
 ```js
@@ -373,7 +377,7 @@ The `displayName` string is used in debugging messages. JSX sets this value auto
 
 `propTypes` can be defined as a property on the component class itself, to define what types the props should be. It should be a map from prop names to types as defined in [`React.PropTypes`](/react/docs/react-api.html#react.proptypes). In development mode, when an invalid value is provided for a prop, a warning will be shown in the JavaScript console. In production mode, `propTypes` checks are skipped for efficiency.
 
-例如：, this code ensures that the `color` prop is a string:
+例如：, this code ensures that the `color` prop is a 字符串:
 
 ```js
 class CustomButton extends React.Component {
@@ -385,7 +389,7 @@ CustomButton.propTypes = {
 };
 ```
 
-We recommend using [Flow](https://flowtype.org/) when possible, to get compile-time typechecking instead of runtime typechecking. [Flow has built-in support for React](https://flowtype.org/docs/react.html) so it's easy to run static analysis on a React app.
+我们推荐使用[Flow](https://flowtype.org/) when possible, to get compile-time typechecking instead of runtime typechecking. [Flow has built-in support for React](https://flowtype.org/docs/react.html) so it's easy to run static analysis on a React app.
 
 * * *
 

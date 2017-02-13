@@ -1,4 +1,6 @@
 
+`React` 是  React 库的进入点. 若你用 React 作为一个script 标签, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
+
 `React` is the entry point to the React library. If you use React as a script tag, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
 
 ES6    `import React from 'react'`

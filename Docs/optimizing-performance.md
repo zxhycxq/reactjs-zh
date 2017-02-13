@@ -6,7 +6,7 @@ Internally, React uses several clever techniques to minimize the number of costl
 
 If you're benchmarking or experiencing performance problems in your React apps, make sure you're testing with the minified production build:
 
-* For Create React App, you need to run `npm run build` and follow the instructions.
+* For Create React App, 你需要运行 `npm run build` and follow the instructions.
 * For single-file builds, we offer production-ready `.min.js` versions.
 * For Browserify, you need to run it with `NODE_ENV=production`.
 * For Webpack, you need to add this to plugins in your production config:

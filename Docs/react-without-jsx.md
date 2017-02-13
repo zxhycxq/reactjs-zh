@@ -49,7 +49,7 @@ The component can either be provided as a string, or as a subclass of `React.Com
 
 If you get tired of typing `React.createElement` so much, one common pattern is to assign a shorthand:
 
-React.createElement可简写
+若厌倦，React.createElement可简写
 
 ```js
 const e = React.createElement;
@@ -64,3 +64,4 @@ ReactDOM.render(
 使用React而不使用JSX几乎是很方便的。
 
 If you use this shorthand form for `React.createElement`, it can be almost as convenient to use React without JSX.
+[已经]

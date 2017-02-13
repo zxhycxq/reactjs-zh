@@ -203,7 +203,7 @@ function ImageCarousel(props) {
 }
 ```
 
-### Disabling Animations
+### 禁用动画
 
 You can disable animating `enter` or `leave` animations if you want. 例如：, sometimes you may want an `enter` animation and no `leave` animation, but `ReactCSSTransitionGroup` waits for an animation to complete before removing your DOM node. You can add `transitionEnter={false}` or `transitionLeave={false}` props to `ReactCSSTransitionGroup` to disable these animations.
 
@@ -232,6 +232,7 @@ var ReactTransitionGroup = React.addons.TransitionGroup; // ES5 with react-with-
  - [`componentWillLeave()`](#componentwillleave)
  - [`componentDidLeave()`](#componentdidleave)
 
+#### 渲染一个不同的组件
 #### Rendering a Different Component
 
 `ReactTransitionGroup` renders as a `span` by default. You can change this behavior by providing a `component` prop. 例如：, here's how you would render a `<ul>`:

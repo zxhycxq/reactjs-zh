@@ -4,7 +4,7 @@ In React, you can create distinct components that encapsulate behavior you need.
 
 Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.
 
-Consider these two components:
+考虑下面两个组件
 
 ```js
 function UserGreeting(props) {
@@ -40,6 +40,8 @@ This example renders a different greeting depending on the value of `isLoggedIn`
 
 ### Element Variables
 ### 元素变量
+
+你可使用变量存储元素。 This can help you conditionally render a part of the component while the rest of the output doesn't change.
 
 You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
 
@@ -111,7 +113,7 @@ ReactDOM.render(
 
 [在CodePen上试验.](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
+While declaring a variable and using an `if` 元素 is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
 
 ### Inline If with Logical && Operator
 
@@ -141,9 +143,9 @@ ReactDOM.render(
 
 [在CodePen上试验.](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
-It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+因其运行在 JavaScript 中, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
 
-Therefore, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
+故, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
 
 ### Inline If-Else with Conditional Operator
 
