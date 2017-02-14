@@ -1,6 +1,4 @@
-``
-//已经
-``    
+  
 
 在我看来，react是使用js构建大型、快速web应用的首要方式。
 他已经在facebook和instagram得到了大规模应用
@@ -275,3 +273,4 @@ Though this sounds complex, it's really just a few lines of code. And it's reall
   当你开始构建大型的组件库时，你会欣赏这种明确性和模块性，并且使用代码重用，你的代码行将开始收缩。 
 
 Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you're used to, remember that code is read far more than it's written, and it's extremely easy to read this modular, explicit code. As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink. :)
+[已经]

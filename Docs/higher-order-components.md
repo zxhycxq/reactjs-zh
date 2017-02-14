@@ -416,4 +416,4 @@ const EnhancedField = enhance(Field);
 this.inputEl.focus();
 ```
 
-This is not a perfect solution by any means. We prefer that refs remain a library concern, rather than require you to manually handle them. We are exploring ways to solve this problem so that using an HOC is unobservable.
+这不是一个完美的解决办法。We prefer that refs remain a library concern, rather than require you to manually handle them. We are exploring ways to solve this problem so that using an HOC is unobservable.
