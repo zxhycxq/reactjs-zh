@@ -1,11 +1,14 @@
 顶级API
 
+若你用 React 作为script 标签,这些顶级 APIs are 在 `ReactDOM`全局可使用.若你通过npm用ES6，你可以写 `import ReactDOM from 'react-dom'`. 若你通过npm用 ES5,你可写 `var ReactDOM = require('react-dom')`.
+
 If you use React as a script tag, these top-level APIs are available on the `ReactDOM` global. If you use ES6 with npm, you can write `import ReactDOM from 'react-dom'`. If you use ES5 with npm, you can write `var ReactDOM = require('react-dom')`.
 
 ## Overview
 ## 综述
 
 `react-dom` 包提供了特殊DOM方法，可以被用在你的app当中。
+并作为一个逃生舱口，以超出React模型，如果你需要的话。
 你的大多数组件都需要这些模块。
 
 The `react-dom` package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the React model if you need to. Most of your components should not need to use this module.
@@ -17,11 +20,13 @@ The `react-dom` package provides DOM-specific methods that can be used at the to
 ### Browser Support
 ### 浏览器支持
 
+IE9以上
+
 React supports all popular browsers, including Internet Explorer 9 and above.
 
 > Note
 >
->我们不支持那些不支持es5 方法的浏览器。
+>我们不支持那些不支持es5 方法的浏览器。可用es5-shim等
 
 > We don't support older browsers that don't support ES5 methods, but you may find that your apps do work in older browsers if polyfills such as [es5-shim and es5-sham](https://github.com/es-shims/es5-shim) are included in the page. You're on your own if you choose to take this path.
 
@@ -52,9 +57,9 @@ If the optional callback is provided, it will be executed after the component is
 
 > Note:
 >
-> `ReactDOM.render()` controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
+> `ReactDOM.render()` 控制你传递的内容controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
 >
-> `ReactDOM.render()` does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.
+> `ReactDOM.render()` 不修改内容节点does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.
 >
 > `ReactDOM.render()` currently returns a reference to the root `ReactComponent` instance. However, using this return value is legacy
 > and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root `ReactComponent` instance, the preferred solution is to attach a
