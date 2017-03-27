@@ -49,7 +49,7 @@ React will call the `ref` callback with the DOM element when the component mount
 
 Using the `ref` callback just to set a property on the class is a common pattern for accessing DOM elements. If you are currently using `this.refs.myRefName` to access refs, we recommend using this pattern instead.
 
-When the `ref` attribute is used on a custom component, the `ref` callback receives the mounted instance of the component as its argument. 例如：, if we wanted to wrap the `CustomTextInput` above to simulate it being clicked immediately after mounting:
+When the `ref` attribute is used on a 自定义组件, the `ref` callback receives the mounted instance of the component as its argument. 例如：, if we wanted to wrap the `CustomTextInput` above to simulate it being clicked immediately after mounting:
 
 ```javascript{3,9}
 class AutoFocusTextInput extends React.Component {

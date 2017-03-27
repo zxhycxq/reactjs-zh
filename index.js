@@ -1,5 +1,5 @@
 /**
- * Created by JieYi on 2017/1/19.
+ *  2017/1/19.
  * 一月
  */
 import React, { Component } from 'react';

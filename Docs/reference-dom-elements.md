@@ -11,7 +11,7 @@ There are a number of attributes that work differently between React and HTML:
 
 ### checked
 
-The `checked` attribute is supported by `<input>` components of type `checkbox` or `radio`. You can use it to set whether the component is checked. This is useful for building controlled components. `defaultChecked` is the uncontrolled equivalent, which sets whether the component is checked when it is first mounted.
+The `checked` attribute is supported by `<input>` components of type `checkbox` or `radio`. You can use it to set whether the component is checked. This is useful for building 受控组件s. `defaultChecked` is the uncontrolled equivalent, which sets whether the component is checked when it is first mounted.
 
 ### className
 
@@ -43,7 +43,7 @@ The `onChange` event behaves as you would expect it to: whenever a form field is
 
 ### selected
 
-The `selected` attribute is supported by `<option>` components. You can use it to set whether the component is selected. This is useful for building controlled components.
+The `selected` attribute is supported by `<option>` components. You can use it to set whether the component is selected. This is useful for building 受控组件s.
 
 ### style
 
@@ -81,7 +81,7 @@ Normally, there is a warning when an element with children is also marked as `co
 
 ### value
 
-The `value` attribute is supported by `<input>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
+The `value` attribute is supported by `<input>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building 受控组件s. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
 
 ## 支持所有的html属性
 ## All Supported HTML Attributes

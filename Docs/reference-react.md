@@ -74,7 +74,7 @@ Validators treat props as optional by default. You can use `isRequired` to make 
 
 ### Add-Ons
 
-If you're using [`react-with-addons.js`](/react/docs/addons.html), the React Add-Ons will be available via `React.addons`.
+若你使用 [`react-with-addons.js`](/react/docs/addons.html), the React Add-Ons will be available via `React.addons`.
 
  - [`React.addons`](#react.addons)
 
