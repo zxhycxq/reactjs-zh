@@ -162,7 +162,7 @@ Think of all of the pieces of data in our example application. We have:
   * The filtered list of products
 
 下边我们就一一对应这些数据，看那些是应该用state绑定的。
-对每一个数据我们需要简单问三个问题：
+<p style="color:red;">对每一个数据我们需要简单问三个问题：</p>
 
 1. 是否是从一个父组件用props传递过来的？如果是，它就不能用state
 2. 数据是否会随时可能变化？如果不是，它也不能用state
