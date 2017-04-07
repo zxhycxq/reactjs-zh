@@ -4,7 +4,7 @@ Consider the ticking clock example from [one of the previous sections](/react/do
 
 到目前为止，只有一种更新UI的方法
 
-So far we have only learned one way to update the UI.
+
 
 We call `ReactDOM.render()` to change the rendered output:
 
@@ -31,9 +31,6 @@ setInterval(tick, 1000);
 
 我们可以从封装时钟的外观开始：
 
-In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
-
-We can start by encapsulating how the clock looks:
 
 ```js{3-6,12}
 function Clock(props) {
@@ -62,9 +59,8 @@ setInterval(tick, 1000);
 
 However, it misses a crucial requirement: the fact that the `Clock` sets up a timer and updates the UI every second should be an implementation detail of the `Clock`.
 
-理想情况下，我们要写这一次，并有时钟自己更新：
+理想情况下，我们要只写这一次，并使时钟自己更新：
 
-Ideally we want to write this once and have the `Clock` update itself:
 
 ```js{2}
 ReactDOM.render(
@@ -72,8 +68,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-
-To implement this, we need to add "state" to the `Clock` component.
 
 要实现这一点，我们需要添加“状态”到时钟组件。
 
@@ -129,19 +123,14 @@ class Clock extends React.Component {
 
 `Clock`  现在被定义为一个类而不是函数。
 
-`Clock` is now defined as a class rather than a function.
-
 这使我们可以使用额外的功能，
 如局部状态和生命周期钩子。
-
-This lets us use additional features such as local state and lifecycle hooks.
 
 ## 为类增加局部状态
 ## Adding Local State to a Class
 
 三步走，从props中移动`数据`到state
 
-We will move the `date` from props to state in three steps:
 
 1) Replace `this.props.date` with `this.state.date` in the `render()` method:
 1)  用 `this.state.date` 替换`this.props.date`在 `render()`方法中:
@@ -194,8 +183,6 @@ Class components should always call the base constructor with `props`.
 
 组件类应该总是使用 props 调用基础构造函数。
 
-3) Remove the `date` prop from the `<Clock />` element:
-
 3) 从`<Clock />` 元素移除 `date` prop :
 
 ```js{2}
@@ -238,7 +225,6 @@ Next, we'll make the `Clock` set up its own timer and update itself every second
 
 ##为类增加生命周期方法
 
-## Adding Lifecycle Methods to a Class
 
 In applications with many components, it's very important to free up resources taken by the components when they are destroyed.
 
@@ -284,7 +270,6 @@ class Clock extends React.Component {
 
 这些方法叫做：生命周期钩子
 
-These methods are called "lifecycle hooks".
 
 `componentDidMount()` 钩子在组件输出后运行
 
@@ -301,7 +286,7 @@ The `componentDidMount()` hook runs after the component output has been rendered
 
 Note how we save the timer ID right on `this`.
 
-While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that is not used for the visual output.
+While `this.props` is set up by React itself and `this.state` 有特殊的含义, you are free to add additional fields to the class manually if you need to store something that is not used for the visual output.
 
 If you don't use something in `render()`, it shouldn't be in the state.
 
@@ -385,11 +370,9 @@ Let's quickly recap what's going on and the order in which the methods are calle
 There are three things you should know about `setState()`.
 
 ###不要直接修改state
-### Do Not Modify State Directly
 
 例如，这将不会重新渲染一个组件
 
-例如：, this will not re-render a component:
 
 ```js
 // Wrong
@@ -398,7 +381,6 @@ this.state.comment = 'Hello';
 
 相反，使用`setState()`:
 
-Instead, use `setState()`:
 
 ```js
 // Correct
@@ -406,7 +388,6 @@ this.setState({comment: 'Hello'});
 ```
 唯一可分配 `this.state`的地方是在构造函数中
 
-The only place where you can assign `this.state` is the constructor.
 
 ### 状态更新可能异步
 ### State Updates May Be Asynchronous

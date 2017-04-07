@@ -148,6 +148,7 @@ ReactDOM.render(
 故, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
 
 ### Inline If-Else with Conditional Operator
+### Inline If-Else with Conditional Operator
 
 Another method for conditionally rendering elements inline is to use the JavaScript conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 

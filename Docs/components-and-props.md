@@ -302,7 +302,6 @@ function withdraw(account, amount) {
 
 React非常灵活，但它有一个严格的规则：
 
-React is pretty flexible but it has a single strict rule:
 
 **All React components must act like pure functions with respect to their props.**
 
